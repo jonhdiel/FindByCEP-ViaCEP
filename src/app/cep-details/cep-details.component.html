@@ -1,0 +1,42 @@
+<div class="row" *ngIf="endereco">
+    <div class="col-md-6 offset-md-3">
+        <span class="anchor" id="formRegister"></span>
+        <hr class="mb-5">
+
+        <div class="card card-outline-secondary">
+            <div class="card-header">
+                <h3 class="mb-0">Resultado:</h3>
+            </div>
+            <div class="card-block">
+
+                <div class="form-group row">
+                    <div class="col-md-12">
+                        <label>Rua: {{ endereco.logradouro }}</label>
+                        <label *ngIf="endereco.complemento">, {{ endereco.complemento }}</label>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-12">
+                        <label>Complemento: </label>
+                        <label *ngIf="endereco.complemento"> {{ endereco.complemento }}</label>
+                        <span *ngIf="!endereco.complemento"> Não disponível</span>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-12">
+                        <label>Bairro: {{ endereco.bairro }}</label>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-12">
+                        <label>Cidade: {{ endereco.localidade }} - {{ endereco.uf }}</label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
